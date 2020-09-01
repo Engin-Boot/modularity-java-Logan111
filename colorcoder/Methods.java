@@ -1,8 +1,7 @@
 package colorcoder;
 
 public class Methods {
-    
-    
+  
     public final static String MajorColorNames[] = {"White", "Red", "Black", "Yellow", "Violet"};
     public final static int numberOfMajorColors = MajorColorNames.length;
     
