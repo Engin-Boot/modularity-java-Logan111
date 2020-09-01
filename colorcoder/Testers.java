@@ -1,5 +1,4 @@
 package colorcoder;
-
 public class Testers 
 {
     static void Printmanual_by_StrConcat()
