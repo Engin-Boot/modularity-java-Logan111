@@ -1,5 +1,4 @@
 package colorcoder;
-
 import  colorcoder.MajorColor;
 import  colorcoder.MinorColor;
 
