@@ -1,5 +1,4 @@
 package colorcoder;
-
  class ColorPair {
      
     public final static String MajorColorNames[] = {"White", "Red", "Black", "Yellow", "Violet"};
