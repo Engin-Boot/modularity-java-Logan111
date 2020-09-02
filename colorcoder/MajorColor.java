@@ -1,5 +1,4 @@
 package colorcoder;
-
 public enum MajorColor implements IColor {
         WHITE(0),
         RED(1),
