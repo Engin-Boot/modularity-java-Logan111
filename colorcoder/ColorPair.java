@@ -1,8 +1,13 @@
 package colorcoder;
-import  colorcoder.MajorColor;
-import  colorcoder.MinorColor;
 
  class ColorPair {
+     
+    public final static String MajorColorNames[] = {"White", "Red", "Black", "Yellow", "Violet"};
+    public final static int numberOfMajorColors = MajorColorNames.length;
+    
+    public final static String MinorColorNames[] = {"Blue", "Orange", "Green", "Brown", "Slate"}; 
+    public final static int numberOfMinorColors = MinorColorNames.length;
+     
         private MajorColor majorColor;
         private MinorColor minorColor;
         
@@ -18,9 +23,9 @@ import  colorcoder.MinorColor;
             return minorColor;
         }
         String ToString() {
-            String colorPairStr = Methods.MajorColorNames[majorColor.getIndex()];
+            String colorPairStr = MajorColorNames[majorColor.getIndex()];
             colorPairStr += " ";
-            colorPairStr += Methods.MinorColorNames[minorColor.getIndex()];
+            colorPairStr += MinorColorNames[minorColor.getIndex()];
             return colorPairStr;
         }
     };
