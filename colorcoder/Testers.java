@@ -1,9 +1,10 @@
 package colorcoder;
+
 public class Testers 
 {
     static void Printmanual_by_StrConcat()
     {
-        int total_entries  = Methods.numberOfMajorColors * Methods.numberOfMinorColors;
+        int total_entries  = ColorPair.numberOfMajorColors * ColorPair.numberOfMinorColors;
         String manual_string = "";
         for(int pair_num = 1; pair_num <= total_entries; pair_num++)
         {
