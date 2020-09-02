@@ -1,24 +1,30 @@
 package colorcoder;
 
-public class Methods {
-  
-    public final static String MajorColorNames[] = {"White", "Red", "Black", "Yellow", "Violet"};
-    public final static int numberOfMajorColors = MajorColorNames.length;
+public class Methods {  
     
-    public final static String MinorColorNames[] = {"Blue", "Orange", "Green", "Brown", "Slate"}; 
-    public final static int numberOfMinorColors = MinorColorNames.length;
+   public static ColorPair GetColorFromPairNumber(int pairNumber)
+   {
+	        int zeroBasedPairNumber = pairNumber - 1;
+	        MajorColor majorColor;
+        majorColor = (MajorColor)fromIndex(MajorColor.values(), zeroBasedPairNumber / ColorPair.numberOfMinorColors);
+	        MinorColor minorColor;
+        minorColor = (MinorColor)fromIndex(MinorColor.values(), zeroBasedPairNumber % ColorPair.numberOfMinorColors);
+	        return new ColorPair(majorColor, minorColor);
+	    }
     
-    static ColorPair GetColorFromPairNumber(int pairNumber)
+    public static int GetPairNumberFromColor(MajorColor major, MinorColor minor)
     {
-        int zeroBasedPairNumber = pairNumber - 1;
-        MajorColor majorColor = MajorColor.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
-        MinorColor minorColor = MinorColor.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
-        return new ColorPair(majorColor, minorColor);
+        return major.getIndex() * ColorPair.numberOfMinorColors + minor.getIndex() + 1;
     }
     
-    static int GetPairNumberFromColor(MajorColor major, MinorColor minor)
-    {
-        return major.getIndex() * numberOfMinorColors + minor.getIndex() + 1;
-    }
+     public static IColor fromIndex(Object[] colors, int index) {
+	        for(Object obj: colors) {
+	        	IColor color = (IColor)obj;
+	            if(color.getIndex() == index) {
+	                return color;
+	            }
+	        }
+	        return null;
+	    }
 
 }
